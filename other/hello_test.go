@@ -1,14 +1,12 @@
-package other_test
+package other
 
 import (
   "context"
   "testing"
-  
-  "encore.app/other"
 )
 
 func TestWorld(t *testing.T) {
-  resp, err := other.World(context.Background(), "Jane Doe")
+  resp, err := World(context.Background(), "Jane Doe")
   if err != nil {
     t.Fatal(err)
   }
