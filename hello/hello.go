@@ -1,7 +1,7 @@
 package hello
 
 import (
-	"context"
+  "context"
 )
 
 // Welcome to Encore!
@@ -18,12 +18,12 @@ import (
 //
 //encore:api public path=/hello/:name
 func World(ctx context.Context, name string) (*Response, error) {
-	msg := "Hello, " + name + "!"
-	return &Response{Message: msg}, nil
+  msg := "Hello there, " + name + "!"
+  return &Response{Message: msg}, nil
 }
 
 type Response struct {
-	Message string
+  Message string
 }
 
 // ==================================================================
