@@ -1,4 +1,4 @@
-package other
+package articles
 
 import (
 	"context"
@@ -10,7 +10,7 @@ func TestWorld(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	want := "Other there, Jane Doe!"
+	want := "Articles there, Jane Doe!"
 	if got := resp.Message; got != want {
 		t.Errorf("got %q, want %q", got, want)
 	}
