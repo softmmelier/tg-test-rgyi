@@ -2,6 +2,9 @@ package articles
 
 import (
 	"context"
+	"fmt"
+
+	"encore.app/other"
 )
 
 // Welcome to Encore!
@@ -19,6 +22,10 @@ import (
 //encore:api public path=/article/:name
 func World(ctx context.Context, name string) (*Response, error) {
 	msg := "Articles there, " + name + "!"
+
+	otherSrv, _ := other.World(ctx, name)
+	fmt.Println(otherSrv.Message)
+
 	return &Response{Message: msg}, nil
 }
 
