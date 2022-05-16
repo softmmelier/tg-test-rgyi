@@ -1,10 +1,9 @@
-package articles
+package comment
 
 import (
 	"context"
 	"fmt"
 
-	"encore.app/hello"
 	"encore.app/other"
 )
 
@@ -20,21 +19,18 @@ import (
 //
 //     curl http://localhost:4000/other/World
 //
-//encore:api public path=/article/:name
+//encore:api public path=/comment/:name
 func World(ctx context.Context, name string) (*Response, error) {
-	msg := "Articles there, " + name + "!"
+	msg := "Comment there, " + name + "!"
 
 	otherSrv, _ := other.World(ctx, name)
 	fmt.Println(otherSrv.Message)
-
-	helloSrv, _ := hello.World(ctx, name)
-	fmt.Println(helloSrv.Message)
 
 	return &Response{Message: msg}, nil
 }
 
 type Response struct {
-	Message string `json:"message"`
+	Message string
 }
 
 // ==================================================================

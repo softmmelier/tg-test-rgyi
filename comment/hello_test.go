@@ -1,8 +1,8 @@
-package hello
+package comment
 
 import (
-  "context"
-  "testing"
+	"context"
+	"testing"
 )
 
 func TestWorld(t *testing.T) {
@@ -10,7 +10,7 @@ func TestWorld(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	want := "Hello there, Jane Doe!"
+	want := "Comment there, Jane Doe!"
 	if got := resp.Message; got != want {
 		t.Errorf("got %q, want %q", got, want)
 	}
